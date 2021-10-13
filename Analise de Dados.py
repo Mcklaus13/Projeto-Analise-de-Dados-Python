@@ -1,8 +1,6 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[31]:
-
+Projeto de analise de dados para tentar entender o por que está acontecendo tantos cancelamentos em uma empresa.
+Foi utilizado no projeto, a linguaguem Python, ferramenta Jupyter Notebook e as Bibliotecas Pandas e Plotly.
+Na conclusão do projeto tem as analises de dados feitas de acordo com os dados obtidos no Arquivo CSV.
 
 '''Desafio:
     
@@ -23,9 +21,6 @@ Link Original do Kaggle:
 https://www.kaggle.com/radmirzosimov/telecom-users-dataset'''
 
 
-# In[32]:
-
-
 # Passo 1: Entender qual é o problema
 import pandas as pd
 
@@ -37,9 +32,6 @@ tabela = pd.read_csv('telecom_users.csv')
 
 tabela = tabela.drop("Unnamed: 0",axis=1)
 display(tabela)
-
-
-# In[33]:
 
 
 # Passo 3: Tratamento de dados
@@ -55,17 +47,10 @@ tabela = tabela.dropna(how='any',axis=0)
 
 print(tabela.info())
 
-
-# In[34]:
-
-
 # Passo 4: Análise inicial
 # Como estão os nossos cancelamentos?
 print(tabela["Churn"].value_counts())
 print(tabela["Churn"].value_counts(normalize=True).map("{:.1%}".format))
-
-
-# In[35]:
 
 
 # Passo 5: Análise mais completa
@@ -78,8 +63,6 @@ for coluna in tabela.columns:
     # etapa2: exibir o gráfico
     grafico.show()
 
-
-# In[36]:
 
 
 '''Conclusões:
@@ -104,8 +87,6 @@ a cancelar muito.
 - Clientes no Boleto tem muito mais chance de cancelar, temos que fazer uma ação para eles mudarem pra outra fomra de pagamento.
 '''
 
-
-# In[ ]:
 
 
 
